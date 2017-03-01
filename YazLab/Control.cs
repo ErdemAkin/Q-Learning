@@ -11,20 +11,24 @@ namespace YazLab
         public static string filePath { get; set; }
         public static string fileName { get; set; }
         public static List<string> neighbor = new List<string>();
-        public static int inputMatrisSize = 0;
-        public static int[,] rMatris = new int[inputMatrisSize, inputMatrisSize];
-        public static int[,] qMatris = new int[inputMatrisSize, inputMatrisSize];
+        public static int inputMatrisSize;
+        public static int[,] rMatris;
+        public static int[][] qMatris;
 
 
         public static void CreateRMatris()
         {
+            rMatris = new int[inputMatrisSize, inputMatrisSize];
+            for (int k = 0; k < inputMatrisSize; k++)
+                for (int l = 0; l < inputMatrisSize; l++)
+                    rMatris[k, l] = -1;
             int i = 0;
             foreach (string value in neighbor)
             {
                 if (value.Length > 1)
                 {
                     string[] keys = value.Split(',');
-                    foreach(string key in keys)
+                    foreach (string key in keys)
                     {
                         for (int y = 0; y < inputMatrisSize; y++)
                         {
@@ -34,7 +38,7 @@ namespace YazLab
                             }
                             else
                             {
-                                if(rMatris[i,y] != 0)
+                                if (rMatris[i, y] != 0)
                                 {
                                     rMatris[i, y] = -1;
                                 }

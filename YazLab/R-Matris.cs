@@ -24,7 +24,7 @@ namespace YazLab
             {
                 for(int y=0;y<Control.inputMatrisSize;y++)
                 {
-                    richTextBox1.Text += Control.rMatris[i, y];
+                    richTextBox1.Text += Control.rMatris[i,y];
                 }
                 richTextBox1.Text += "\n";
             }
