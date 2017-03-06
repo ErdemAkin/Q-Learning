@@ -43,6 +43,8 @@ namespace YazLab
 
                 R_Matris rmatris = new R_Matris();
                 rmatris.ShowDialog();
+                Q_Matris qmatris = new Q_Matris();
+                qmatris.ShowDialog();
             }
         }
     }

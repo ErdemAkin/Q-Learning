@@ -10,18 +10,19 @@ using System.Windows.Forms;
 
 namespace YazLab
 {
-    public partial class R_Matris : Form
+    public partial class Q_Matris : Form
     {
-        public R_Matris()
+        public Q_Matris()
         {
             InitializeComponent();
         }
 
-        private void R_Matris_Load(object sender, EventArgs e)
+        private void Q_Matris_Load(object sender, EventArgs e)
         {
-            Control.CreateRMatris();
-            Control.initRDataTable();
-            dataGridView1.DataSource = Control.rtable;
+            Control.InitQMatris();
+            Control.CreateQMatris();
+            Control.initQDataTable();
+            dataGridView2.DataSource = Control.qtable;
         }
     }
 }
