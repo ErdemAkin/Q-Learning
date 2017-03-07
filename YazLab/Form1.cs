@@ -27,6 +27,7 @@ namespace YazLab
             if (file.ShowDialog() == DialogResult.OK)
             {
                 textBox1.Text = file.FileName;
+                Control.exit = Int32.Parse(exitText.Text); 
                 Control.filePath = file.FileName;
                 Control.fileName = file.SafeFileName;
 
@@ -47,5 +48,6 @@ namespace YazLab
                 qmatris.ShowDialog();
             }
         }
+
     }
 }

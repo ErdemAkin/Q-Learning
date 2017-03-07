@@ -13,6 +13,7 @@ namespace YazLab
         public static string fileName { get; set; }
         public static List<string> neighbor = new List<string>();
         public static int inputMatrisSize;
+        public static int exit;
         public static double max = 0;
         public static double gamma = 0.8;
         public static int[,] rMatris;
@@ -69,6 +70,14 @@ namespace YazLab
                     }
                 }
                 i++;
+            }
+
+            for (int y = 0; y < inputMatrisSize; y++)
+            {
+                if(rMatris[y, exit] == 0)
+                {
+                    rMatris[y, exit] = 100;
+                }
             }
         }
 
