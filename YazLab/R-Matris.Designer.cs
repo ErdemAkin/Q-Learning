@@ -44,16 +44,18 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(379, 331);
+            this.dataGridView1.Size = new System.Drawing.Size(284, 261);
             this.dataGridView1.TabIndex = 0;
             // 
             // R_Matris
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(379, 331);
+            this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.dataGridView1);
+            this.Location = new System.Drawing.Point(350, 100);
             this.Name = "R_Matris";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "R_Matris";
             this.Load += new System.EventHandler(this.R_Matris_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

@@ -46,11 +46,11 @@ namespace YazLab
             Control.start = Int32.Parse(startText.Text);
             Control.iterasyon = Int32.Parse(iteText.Text);
             R_Matris rmatris = new R_Matris();
-            rmatris.ShowDialog();
+            rmatris.Show();
             Q_Matris qmatris = new Q_Matris();
-            qmatris.ShowDialog();
+            qmatris.Show();
             PathShow pathShow = new PathShow();
-            pathShow.ShowDialog();
+            pathShow.Show();
         }
 
     }

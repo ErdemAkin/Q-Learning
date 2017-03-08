@@ -46,8 +46,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.richTextBox1);
+            this.Location = new System.Drawing.Point(700, 100);
             this.Name = "PathShow";
-            this.Text = "PathShow";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.Text = "Yol Haritası";
             this.Load += new System.EventHandler(this.PathShow_Load);
             this.ResumeLayout(false);
 

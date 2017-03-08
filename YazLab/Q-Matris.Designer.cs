@@ -70,7 +70,9 @@
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
+            this.Location = new System.Drawing.Point(0, 100);
             this.Name = "Q_Matris";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Q_Matris";
             this.Load += new System.EventHandler(this.Q_Matris_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
