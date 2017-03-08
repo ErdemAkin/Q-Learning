@@ -13,6 +13,7 @@ namespace YazLab
         public static string fileName { get; set; }
         public static List<string> neighbor = new List<string>();
         public static int inputMatrisSize;
+        public static int iterasyon;
         public static int start;
         public static int exit;
         public static double gamma = 0.8;
@@ -95,7 +96,7 @@ namespace YazLab
 
         public static void CreateQMatris()
         {
-            for (int z = 0; z<3000; z++)
+            for (int z = 0; z < iterasyon; z++)
             {
                 for (int i = 0; i < inputMatrisSize; i++)
                 {

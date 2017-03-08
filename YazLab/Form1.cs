@@ -44,6 +44,7 @@ namespace YazLab
             }
             Control.exit = Int32.Parse(exitText.Text);
             Control.start = Int32.Parse(startText.Text);
+            Control.iterasyon = Int32.Parse(iteText.Text);
             R_Matris rmatris = new R_Matris();
             rmatris.ShowDialog();
             Q_Matris qmatris = new Q_Matris();
