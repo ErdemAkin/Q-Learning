@@ -19,10 +19,9 @@ namespace YazLab
 
         private void PathShow_Load(object sender, EventArgs e)
         {
-            for (int i = 0; i < Control.pathFinder.GetLength(0); i++)
+            foreach(int key in Control.pathFinder)
             {
-                richTextBox1.Text += Control.pathFinder[i, 0];
-                richTextBox1.Text += Control.pathFinder[i, 1];
+                richTextBox1.Text += key.ToString();
                 richTextBox1.Text += "\n";
             }
         }

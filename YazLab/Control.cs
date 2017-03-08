@@ -20,10 +20,9 @@ namespace YazLab
         public static int control = 0;
         public static int[,] rMatris;
         public static int[,] qMatris;
-        public static int[,] pathFinder;
+        public static List<int> pathFinder;
         public static DataTable rtable;
         public static DataTable qtable;
-        public static int[,] truePath;
 
 
         public static void CreateRMatris()
@@ -163,29 +162,26 @@ namespace YazLab
 
         public static void FindPath()
         {
-            int z = 0;
-            for (int i = 0; i < inputMatrisSize; i++)
-                for (int y = 0; y < inputMatrisSize; y++)
-                    if (rMatris[i, y] != -1)
-                        control++;
-
-            pathFinder = new int[control, 2];
-
-            for (int i = 0; i < inputMatrisSize; i++)
+            pathFinder = new List<int>();
+            pathFinder.Add(start);
+            for (int i = start; i < inputMatrisSize;)
             {
-                int max = -1;
+                int max = 0;
                 int index = 0;
-                for (int y = i; y < inputMatrisSize; y++)
+                for (int y = 0; y < inputMatrisSize; y++)
                 {
-                    if (rMatris[i, y] != -1 && max < qMatris[i, y])
+                    if(qMatris[i,y] > max)
                     {
                         max = qMatris[i, y];
                         index = y;
                     }
                 }
-                pathFinder[i, 0] = i;
-                pathFinder[i, 1] = index;
-
+                pathFinder.Add(index);
+                if(index == exit)
+                {
+                    break;
+                }
+                i = index;
             }
 
         }
