@@ -22,6 +22,7 @@ namespace YazLab
             Control.InitQMatris();
             Control.CreateQMatris();
             Control.initQDataTable();
+            Control.FindPath();
             dataGridView2.DataSource = Control.qtable;
         }
     }

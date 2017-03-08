@@ -13,13 +13,16 @@ namespace YazLab
         public static string fileName { get; set; }
         public static List<string> neighbor = new List<string>();
         public static int inputMatrisSize;
+        public static int start;
         public static int exit;
-        public static double max = 0;
         public static double gamma = 0.8;
+        public static int control = 0;
         public static int[,] rMatris;
         public static int[,] qMatris;
+        public static int[,] pathFinder;
         public static DataTable rtable;
         public static DataTable qtable;
+        public static int[,] truePath;
 
 
         public static void CreateRMatris()
@@ -74,11 +77,12 @@ namespace YazLab
 
             for (int y = 0; y < inputMatrisSize; y++)
             {
-                if(rMatris[y, exit] == 0)
+                if (rMatris[y, exit] == 0)
                 {
                     rMatris[y, exit] = 100;
                 }
             }
+            rMatris[exit, exit] = 100;
         }
 
         public static void InitQMatris()
@@ -91,18 +95,29 @@ namespace YazLab
 
         public static void CreateQMatris()
         {
-            for (int i = 0; i < inputMatrisSize; i++)
+            for (int z = 0; z<3000; z++)
             {
-                for (int y = 0; y < inputMatrisSize; y++)
+                for (int i = 0; i < inputMatrisSize; i++)
                 {
-                    for (int k = 0; k < inputMatrisSize; k++)
+                    for (int y = 0; y < inputMatrisSize; y++)
                     {
-                        if (rMatris[y, k] != -1 && qMatris[y, k] > max)
+                        int max = 0;
+                        for (int k = 0; k < inputMatrisSize; k++)
                         {
-                            max = qMatris[y, k];
+                            if (rMatris[y, k] != -1 && qMatris[y, k] >= max)
+                            {
+                                max = qMatris[y, k];
+                            }
+                        }
+                        if (rMatris[i, y] == -1)
+                        {
+                            qMatris[i, y] = 0;
+                        }
+                        else
+                        {
+                            qMatris[i, y] = (int)(rMatris[i, y] + (gamma * max));
                         }
                     }
-                    qMatris[i, y] = (int)(rMatris[i, y] + (gamma * max));
                 }
             }
         }
@@ -143,6 +158,35 @@ namespace YazLab
                 }
                 rtable.Rows.Add(row);
             }
+        }
+
+        public static void FindPath()
+        {
+            int z = 0;
+            for (int i = 0; i < inputMatrisSize; i++)
+                for (int y = 0; y < inputMatrisSize; y++)
+                    if (rMatris[i, y] != -1)
+                        control++;
+
+            pathFinder = new int[control, 2];
+
+            for (int i = 0; i < inputMatrisSize; i++)
+            {
+                int max = -1;
+                int index = 0;
+                for (int y = i; y < inputMatrisSize; y++)
+                {
+                    if (rMatris[i, y] != -1 && max < qMatris[i, y])
+                    {
+                        max = qMatris[i, y];
+                        index = y;
+                    }
+                }
+                pathFinder[i, 0] = i;
+                pathFinder[i, 1] = index;
+
+            }
+
         }
     }
 }

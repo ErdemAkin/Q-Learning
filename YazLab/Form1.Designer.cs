@@ -33,18 +33,20 @@
             this.exitText = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.startText = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 70);
+            this.textBox1.Location = new System.Drawing.Point(12, 103);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(468, 20);
             this.textBox1.TabIndex = 0;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 103);
+            this.button1.Location = new System.Drawing.Point(12, 129);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(468, 23);
             this.button1.TabIndex = 1;
@@ -54,7 +56,7 @@
             // 
             // exitText
             // 
-            this.exitText.Location = new System.Drawing.Point(12, 28);
+            this.exitText.Location = new System.Drawing.Point(12, 64);
             this.exitText.Name = "exitText";
             this.exitText.Size = new System.Drawing.Size(468, 20);
             this.exitText.TabIndex = 2;
@@ -62,7 +64,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 51);
+            this.label1.Location = new System.Drawing.Point(12, 87);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(81, 13);
             this.label1.TabIndex = 3;
@@ -71,17 +73,35 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 9);
+            this.label2.Location = new System.Drawing.Point(12, 48);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(113, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "Çıkış Noktasını Seçiniz";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(137, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Başlangıç Noktasını Seçiniz";
+            // 
+            // startText
+            // 
+            this.startText.Location = new System.Drawing.Point(12, 25);
+            this.startText.Name = "startText";
+            this.startText.Size = new System.Drawing.Size(468, 20);
+            this.startText.TabIndex = 6;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(492, 147);
+            this.ClientSize = new System.Drawing.Size(492, 167);
+            this.Controls.Add(this.startText);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.exitText);
@@ -101,6 +121,8 @@
         private System.Windows.Forms.TextBox exitText;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox startText;
     }
 }
 

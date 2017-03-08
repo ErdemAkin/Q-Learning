@@ -27,7 +27,6 @@ namespace YazLab
             if (file.ShowDialog() == DialogResult.OK)
             {
                 textBox1.Text = file.FileName;
-                Control.exit = Int32.Parse(exitText.Text); 
                 Control.filePath = file.FileName;
                 Control.fileName = file.SafeFileName;
 
@@ -42,11 +41,15 @@ namespace YazLab
                 sw.Close();
                 fs.Close();
 
-                R_Matris rmatris = new R_Matris();
-                rmatris.ShowDialog();
-                Q_Matris qmatris = new Q_Matris();
-                qmatris.ShowDialog();
             }
+            Control.exit = Int32.Parse(exitText.Text);
+            Control.start = Int32.Parse(startText.Text);
+            R_Matris rmatris = new R_Matris();
+            rmatris.ShowDialog();
+            Q_Matris qmatris = new Q_Matris();
+            qmatris.ShowDialog();
+            PathShow pathShow = new PathShow();
+            pathShow.ShowDialog();
         }
 
     }
