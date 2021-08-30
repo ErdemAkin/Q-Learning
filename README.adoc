@@ -1,5 +1,7 @@
-== Q-Learning İle Labirentte En Kısa Yol Bulma Projesi
+== Q-Learning
 
-Kocaeli Üniversitesi Bilgisayar Mühendisliği Yazılım Laboratuvar dersi projesidir.
+Kocaeli University Computer Engineering Software Laboratory course project.
 
-C# kullanarak yazılmıştır.
+It was developed using C#.
+
+Finds the shortest path in a maze using Q learning algorithm.
